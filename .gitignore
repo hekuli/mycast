@@ -1,0 +1,19 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# ai
+.claude/settings.local.json
+
+# input files
+incoming/
+# output files
+output/
+
