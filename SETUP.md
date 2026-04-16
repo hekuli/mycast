@@ -51,26 +51,3 @@ uv run python -c "import kittentts; print('KittenTTS imported successfully')"
 If this prints the success message, you're good.
 
 
-## Step 4 — Run the TTS script
-
-```bash
-uv run python main.py tts input.txt
-```
-
-## Step 5 — Play the audio
-
-```bash
-afplay output.mp3
-```
-
----
-
-## Useful commands to remember
-
-| Task                        | Command                     |
-|-----------------------------|-----------------------------|
-| Add a package               | `uv add <package>`          |
-| Remove a package            | `uv remove <package>`       |
-| Run a script                | `uv run python script.py`   |
-| Sync deps (after git pull)  | `uv sync`                   |
-| See installed packages      | `uv pip list`               |

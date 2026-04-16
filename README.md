@@ -24,9 +24,9 @@ uv run python main.py tts input.txt -s 1.2              # speak faster
 uv run python main.py tts input.txt -s 0.8              # speak slower
 ```
 
-Output is MP3. Play with `afplay episode1.mp3`.
+Output is MP3
 
-### Create a podcast feed
+### Create a new podcast feed
 
 ```bash
 uv run python main.py new-podcast "My Podcast" -d "A podcast about things"
@@ -37,6 +37,8 @@ uv run python main.py new-podcast "My Podcast" --force   # overwrite existing
 Creates an RSS 2.0 feed template (`feed.xml` by default). Edit it to fill in your podcast details (link, image, category, etc.).
 
 ### Generate speech and add to a podcast feed
+
+Creates an mp3 from the input text file and adds the results to the podcast feed.
 
 ```bash
 uv run python main.py tts 2026-04-06.txt -f feed.xml -t "April 6 News"
@@ -67,22 +69,23 @@ The mp3 and transcript files are copied into the feed's directory (overwriting i
 
 Assumes the `rclone` tool is installed.
 
-List bucket contents:
+List bucket contents for a bucket called `mycast` (assumes a rclone remote configured named `r2`:
 ```
-rclone ls mycast:
+rclone ls r2:mycast
 ```
 
 Upload entire output directory contents:
 ```
-rclone 
+rclone copy ./output r2:mycast
 ```
+
 
 ## Voices
 
 | Voice    | Gender |
 |----------|--------|
-| Bella    | Female |
-| Jasper   | Male (default) |
+| Bella    | Female (default) |
+| Jasper   | Male   |
 | Luna     | Female |
 | Bruno    | Male   |
 | Rosie    | Female |
