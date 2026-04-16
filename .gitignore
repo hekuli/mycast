@@ -16,4 +16,5 @@ wheels/
 incoming/
 # output files
 output/
-
+# personal stuff
+agent-instructions/personalized-settings.md
